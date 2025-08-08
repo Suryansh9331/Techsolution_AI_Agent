@@ -1,0 +1,315 @@
+{
+    "products": [
+      {
+        "id": "cm-basic",
+        "name": "Cloud Manager Basic",
+        "description": "Entry-level cloud infrastructure management solution for small businesses and startups.",
+        "price": {
+          "monthly": 49.99,
+          "annual": 539.89,
+          "annual_discount_percentage": 10
+        },
+        "features": [
+          {
+            "name": "Resource Monitoring",
+            "description": "Monitor CPU, memory, storage, and network usage across your cloud infrastructure."
+          },
+          {
+            "name": "Basic Alerts",
+            "description": "Set up simple threshold-based alerts for critical resources."
+          },
+          {
+            "name": "Infrastructure Visualization",
+            "description": "Basic dashboard showing your cloud resources and their relationships."
+          },
+          {
+            "name": "5 User Accounts",
+            "description": "Support for up to 5 user accounts with basic role permissions."
+          }
+        ],
+        "limitations": [
+          "Limited to 25 monitored resources",
+          "No automated remediation",
+          "Basic reporting only",
+          "Email support only with 24-hour response time"
+        ],
+        "target_audience": "Startups and small teams with basic cloud management needs"
+      },
+      {
+        "id": "cm-pro",
+        "name": "Cloud Manager Pro",
+        "description": "Comprehensive cloud management platform for mid-sized businesses with growing infrastructure needs.",
+        "price": {
+          "monthly": 149.99,
+          "annual": 1619.89,
+          "annual_discount_percentage": 10
+        },
+        "features": [
+          {
+            "name": "Advanced Monitoring",
+            "description": "Detailed monitoring including custom metrics, application-level insights, and historical trending."
+          },
+          {
+            "name": "Smart Alerting",
+            "description": "AI-powered alerts with anomaly detection and correlation analysis."
+          },
+          {
+            "name": "Cost Optimization",
+            "description": "Identifies cost-saving opportunities and provides rightsizing recommendations."
+          },
+          {
+            "name": "Automation Workflows",
+            "description": "Create simple automation routines for common tasks and remediation."
+          },
+          {
+            "name": "Multi-Cloud Support",
+            "description": "Support for AWS, Azure, and Google Cloud Platform."
+          },
+          {
+            "name": "20 User Accounts",
+            "description": "Support for up to 20 user accounts with advanced role-based permissions."
+          }
+        ],
+        "limitations": [
+          "Limited to 100 monitored resources",
+          "Basic compliance reporting",
+          "Email and chat support with 12-hour response time"
+        ],
+        "target_audience": "Mid-sized businesses with multi-cloud environments"
+      },
+      {
+        "id": "cm-enterprise",
+        "name": "Cloud Manager Enterprise",
+        "description": "Enterprise-grade cloud governance and management solution for large organizations.",
+        "price": {
+          "monthly": 499.99,
+          "annual": 5399.89,
+          "annual_discount_percentage": 10,
+          "custom_pricing_available": true
+        },
+        "features": [
+          {
+            "name": "Comprehensive Monitoring Suite",
+            "description": "Full-stack monitoring with custom dashboards, advanced analytics, and ML-driven insights."
+          },
+          {
+            "name": "Predictive Analysis",
+            "description": "ML-powered forecasting for resource usage, costs, and potential issues."
+          },
+          {
+            "name": "Advanced Automation",
+            "description": "Create complex multi-step workflows with conditional logic and approval processes."
+          },
+          {
+            "name": "Policy Governance",
+            "description": "Define and enforce organizational policies across your entire cloud ecosystem."
+          },
+          {
+            "name": "Security Compliance",
+            "description": "Continuous compliance monitoring with support for major standards (HIPAA, PCI, SOC2, etc.)."
+          },
+          {
+            "name": "Disaster Recovery",
+            "description": "Automated backup, recovery, and failover management."
+          },
+          {
+            "name": "Unlimited User Accounts",
+            "description": "Support for unlimited users with granular, custom role definitions."
+          },
+          {
+            "name": "API Access",
+            "description": "Full API access for custom integrations and extensions."
+          }
+        ],
+        "limitations": [
+          "Complex setup requiring professional services",
+          "Higher learning curve"
+        ],
+        "target_audience": "Large enterprises with complex cloud environments and strict governance requirements"
+      },
+      {
+        "id": "cs-standard",
+        "name": "Container Sentinel Standard",
+        "description": "Container security and management solution for Kubernetes environments.",
+        "price": {
+          "monthly": 199.99,
+          "annual": 2159.89,
+          "annual_discount_percentage": 10
+        },
+        "features": [
+          {
+            "name": "Container Vulnerability Scanning",
+            "description": "Automatically scan container images for vulnerabilities and malware."
+          },
+          {
+            "name": "Runtime Security",
+            "description": "Monitor and protect containers during runtime with behavior analysis."
+          },
+          {
+            "name": "Kubernetes Integration",
+            "description": "Seamless integration with Kubernetes for policy enforcement and visibility."
+          },
+          {
+            "name": "Image Registry Scanning",
+            "description": "Scan private and public registries for vulnerable images."
+          },
+          {
+            "name": "Compliance Checks",
+            "description": "Verify containers against CIS benchmarks and security best practices."
+          }
+        ],
+        "limitations": [
+          "Limited to 50 nodes",
+          "Basic compliance reporting",
+          "Support for major Kubernetes distributions only"
+        ],
+        "target_audience": "Organizations running production Kubernetes workloads"
+      },
+      {
+        "id": "cs-enterprise",
+        "name": "Container Sentinel Enterprise",
+        "description": "Enterprise-grade container security and governance platform for large-scale Kubernetes deployments.",
+        "price": {
+          "monthly": 499.99,
+          "annual": 5399.89,
+          "annual_discount_percentage": 10,
+          "custom_pricing_available": true
+        },
+        "features": [
+          {
+            "name": "Advanced Container Security",
+            "description": "Comprehensive container security with zero-day threat protection and custom policy enforcement."
+          },
+          {
+            "name": "Multi-Cluster Management",
+            "description": "Centralized management for multiple Kubernetes clusters across environments."
+          },
+          {
+            "name": "Service Mesh Integration",
+            "description": "Integration with Istio, Linkerd, and other service mesh technologies."
+          },
+          {
+            "name": "Advanced Network Policies",
+            "description": "Create and enforce sophisticated network policies with traffic visualization."
+          },
+          {
+            "name": "GitOps Workflow Integration",
+            "description": "Seamless integration with CI/CD pipelines and GitOps workflows."
+          },
+          {
+            "name": "Advanced RBAC Management",
+            "description": "Sophisticated role-based access control with detailed audit logging."
+          }
+        ],
+        "limitations": [
+          "Requires dedicated resource for management",
+          "Complex setup recommended with professional services"
+        ],
+        "target_audience": "Large enterprises with extensive Kubernetes deployments across multiple environments"
+      },
+      {
+        "id": "dp-standard",
+        "name": "DataProtect Standard",
+        "description": "Cloud-native data protection and backup solution for critical workloads.",
+        "price": {
+          "monthly": 129.99,
+          "annual": 1403.89,
+          "annual_discount_percentage": 10,
+          "storage_costs_additional": true
+        },
+        "features": [
+          {
+            "name": "Automated Backups",
+            "description": "Schedule automated backups for cloud workloads and databases."
+          },
+          {
+            "name": "Point-in-Time Recovery",
+            "description": "Restore to specific points in time with granular recovery options."
+          },
+          {
+            "name": "Cross-Region Replication",
+            "description": "Replicate backups across regions for disaster recovery."
+          },
+          {
+            "name": "Encryption",
+            "description": "End-to-end encryption for data in transit and at rest."
+          },
+          {
+            "name": "Retention Policies",
+            "description": "Define custom retention policies for different data types."
+          }
+        ],
+        "limitations": [
+          "Limited to 5TB of protected data",
+          "Basic reporting capabilities",
+          "Support for major database engines only"
+        ],
+        "target_audience": "Organizations needing reliable backup for cloud workloads"
+      }
+    ],
+    "addons": [
+      {
+        "id": "addon-training",
+        "name": "Training Package",
+        "description": "Comprehensive training for your team on TechSolutions products.",
+        "price": 1999.99,
+        "details": "5-day training program for up to 10 team members, covering product features, best practices, and administration."
+      },
+      {
+        "id": "addon-ps",
+        "name": "Professional Services",
+        "description": "Expert assistance with setup, configuration, and optimization.",
+        "price": {
+          "hourly": 199.99,
+          "day_rate": 1499.99
+        },
+        "details": "Dedicated solutions architect to help with implementation, migration, and advanced configuration."
+      },
+      {
+        "id": "addon-premium-support",
+        "name": "Premium Support",
+        "description": "24/7 priority support with guaranteed response times.",
+        "price": {
+          "monthly": 299.99,
+          "annual": 3239.89
+        },
+        "details": "Dedicated support engineer, 1-hour response time for critical issues, monthly health checks, and priority bug fixes."
+      },
+      {
+        "id": "addon-users-10",
+        "name": "Additional 10 Users",
+        "description": "Expand your user count by an additional 10 users.",
+        "price": {
+          "monthly": 99.99,
+          "annual": 1079.89
+        },
+        "compatible_products": ["cm-basic", "cm-pro"]
+      }
+    ],
+    "bundles": [
+      {
+        "id": "bundle-cloud-complete",
+        "name": "Cloud Complete",
+        "description": "Comprehensive cloud management and security bundle.",
+        "included_products": ["cm-pro", "cs-standard"],
+        "price": {
+          "monthly": 299.99,
+          "annual": 3239.89,
+          "saving_percentage": 15
+        }
+      },
+      {
+        "id": "bundle-enterprise-suite",
+        "name": "Enterprise Management Suite",
+        "description": "Complete enterprise solution for cloud management, security, and data protection.",
+        "included_products": ["cm-enterprise", "cs-enterprise", "dp-standard"],
+        "price": {
+          "monthly": 999.99,
+          "annual": 10799.89,
+          "saving_percentage": 20
+        },
+        "included_addons": ["addon-premium-support"]
+      }
+    ]
+  }
+  

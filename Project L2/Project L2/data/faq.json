@@ -1,0 +1,154 @@
+{
+    "categories": [
+      {
+        "name": "General",
+        "questions": [
+          {
+            "question": "What is TechSolutions?",
+            "answer": "TechSolutions is a leading provider of cloud infrastructure management and security software. Our products help organizations monitor, manage, secure, and optimize their cloud environments across multiple providers including AWS, Azure, and Google Cloud Platform."
+          },
+          {
+            "question": "Which cloud providers do you support?",
+            "answer": "TechSolutions products support all major cloud providers including Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP), and Oracle Cloud Infrastructure (OCI). Our Enterprise tier also offers limited support for IBM Cloud and Alibaba Cloud."
+          },
+          {
+            "question": "How do I contact customer support?",
+            "answer": "You can contact our customer support team through multiple channels: 1) Email: support@techsolutions.example.com, 2) Phone: 1-800-TECH-HELP (available 24/7 for Premium Support customers, 9am-5pm PT for others), 3) In-app chat support, or 4) Support ticket through our customer portal at portal.techsolutions.example.com."
+          },
+          {
+            "question": "What are your support hours?",
+            "answer": "Our standard support hours are Monday through Friday, 9am to 5pm Pacific Time, excluding major holidays. Premium Support customers receive 24/7 support for critical issues. Enterprise customers with the Premium Support add-on receive personalized support with dedicated support engineers."
+          },
+          {
+            "question": "Do you offer a free trial?",
+            "answer": "Yes, we offer a 14-day free trial of our Cloud Manager Pro and Container Sentinel Standard products. The trial includes full access to all features and limited support. To start your free trial, visit www.techsolutions.example.com/free-trial or contact our sales team at sales@techsolutions.example.com."
+          },
+          {
+            "question": "How often do you release updates?",
+            "answer": "We follow a regular release schedule with major updates every quarter, minor updates monthly, and critical security patches as needed. All updates to our cloud-hosted solutions are applied automatically with zero downtime. For on-premises deployments, customers receive notifications when updates are available."
+          }
+        ]
+      },
+      {
+        "name": "Billing & Pricing",
+        "questions": [
+          {
+            "question": "How is your pricing structured?",
+            "answer": "Our pricing is based on a subscription model with monthly or annual billing options. Annual subscriptions receive a 10% discount. Pricing tiers vary based on the product, features, and scale of resources being managed. For detailed pricing, please visit our pricing page at www.techsolutions.example.com/pricing or contact sales for custom enterprise quotes."
+          },
+          {
+            "question": "Can I change my subscription plan later?",
+            "answer": "Yes, you can upgrade your subscription at any time, with the price difference prorated for the remainder of your billing period. Downgrades can be processed to take effect at the end of your current billing cycle. Please contact our customer support team to assist with plan changes."
+          },
+          {
+            "question": "Do you offer discounts for non-profits or educational institutions?",
+            "answer": "Yes, we offer special pricing for qualified non-profit organizations, educational institutions, and research facilities. These organizations may be eligible for discounts up to 25% off our standard pricing. Please contact our sales team with documentation of your organization's status to apply for this discount."
+          },
+          {
+            "question": "What payment methods do you accept?",
+            "answer": "We accept major credit cards (Visa, MasterCard, American Express, Discover), ACH bank transfers, and wire transfers. Enterprise customers may also set up invoicing with net-30 payment terms subject to credit approval. International customers can pay in USD, EUR, or GBP."
+          },
+          {
+            "question": "How do I update my billing information?",
+            "answer": "You can update your billing information through the customer portal at portal.techsolutions.example.com. Navigate to Account > Billing > Payment Methods to add or update payment information. For assistance, please contact our billing department at billing@techsolutions.example.com or call 1-800-TECH-BILL."
+          },
+          {
+            "question": "What happens if I exceed my plan limits?",
+            "answer": "If you approach your plan limits, you'll receive notifications in the platform and via email. If you exceed limits, we'll continue service without interruption, and the additional usage will be billed at our standard overage rates on your next invoice. You can view current usage in the customer portal under Account > Usage."
+          }
+        ]
+      },
+      {
+        "name": "Technical",
+        "questions": [
+          {
+            "question": "What are the system requirements for your software?",
+            "answer": "For our cloud-hosted SaaS solutions, you only need a modern web browser (Chrome, Firefox, Safari, or Edge). For on-premises deployments, minimum requirements include: Linux server (Ubuntu 20.04+, RHEL 8+, or Amazon Linux 2), 4 CPU cores, 16GB RAM, 100GB storage, and outbound internet connectivity for updates. Docker and Kubernetes deployments are also supported with detailed requirements in our documentation."
+          },
+          {
+            "question": "How secure is my data with TechSolutions?",
+            "answer": "Security is our top priority. We employ multiple layers of protection including: 1) All data encrypted in transit and at rest, 2) Regular third-party security audits and penetration testing, 3) SOC 2 Type II and ISO 27001 certified infrastructure, 4) Role-based access control, 5) Multi-factor authentication, 6) Regular security patches, and 7) Comprehensive audit logging. For detailed security information, please review our security whitepaper at www.techsolutions.example.com/security."
+          },
+          {
+            "question": "Do I need to install any agents on my cloud resources?",
+            "answer": "It depends on the level of monitoring and management you require. Basic monitoring can be done without agents using cloud provider APIs. For enhanced monitoring, our lightweight agents can be deployed to collect detailed metrics and enable advanced features. Agent deployment can be automated through our platform and requires minimal resources (50MB memory, <1% CPU)."
+          },
+          {
+            "question": "How do I connect my cloud accounts to your platform?",
+            "answer": "Connection is simple and secure using read-only API access. In the TechSolutions platform, navigate to Settings > Cloud Providers > Add Provider. You'll receive step-by-step instructions for creating the necessary API credentials in your cloud provider's console and entering them in our platform. We never store your cloud provider root credentials."
+          },
+          {
+            "question": "Can I use your platform with my private/hybrid cloud?",
+            "answer": "Yes, our Enterprise tier supports private and hybrid cloud environments. We offer integrations with VMware vSphere, OpenStack, and bare metal servers via our on-premises connector. The connector establishes a secure outbound connection to our platform while keeping all your infrastructure behind your firewall."
+          },
+          {
+            "question": "What APIs do you offer for integration with other tools?",
+            "answer": "We provide comprehensive RESTful APIs that allow you to integrate TechSolutions with your existing tools and workflows. Our API documentation is available at developer.techsolutions.example.com. We also offer pre-built integrations with popular tools like Slack, Microsoft Teams, PagerDuty, Jira, ServiceNow, and major CI/CD platforms."
+          },
+          {
+            "question": "How do I troubleshoot the 'E1234' error code?",
+            "answer": "Error E1234 indicates an API connection failure with your cloud provider. To resolve this: 1) Verify your API credentials are valid and have not expired, 2) Check your network connectivity to the cloud provider, 3) Confirm the cloud provider's services are operational, 4) Ensure your firewall isn't blocking outbound connections to the API endpoints. For detailed troubleshooting steps, please refer to our technical documentation."
+          }
+        ]
+      },
+      {
+        "name": "Products & Features",
+        "questions": [
+          {
+            "question": "What's the difference between Cloud Manager Pro and Enterprise?",
+            "answer": "Cloud Manager Enterprise builds on the Pro version with several advanced features: 1) Unlimited resource monitoring vs. 100 in Pro, 2) Advanced compliance and governance features, 3) Custom role definitions vs. predefined roles in Pro, 4) Advanced automation with multi-step workflows and approvals, 5) AI-powered predictive analytics and recommendations, 6) Priority support with faster response times, and 7) Custom integrations and API access. Enterprise is designed for larger organizations with complex cloud environments and strict governance requirements."
+          },
+          {
+            "question": "Does Container Sentinel work with any Kubernetes distribution?",
+            "answer": "Container Sentinel works with all CNCF-certified Kubernetes distributions including Amazon EKS, Azure AKS, Google GKE, Red Hat OpenShift, Rancher, and self-managed Kubernetes clusters. The Standard edition supports major managed services, while Enterprise adds support for specialized distributions and air-gapped environments. We recommend Kubernetes version 1.22 or newer for full feature compatibility."
+          },
+          {
+            "question": "How do I set up alerts for unusual cloud spending?",
+            "answer": "To set up cost alerts: 1) Navigate to Cost Management > Budgets & Alerts, 2) Click 'Create Budget' and define your monthly budget amount, 3) Add alert thresholds (e.g., 50%, 80%, 100% of budget), 4) Configure notification recipients and channels (email, Slack, etc.), 5) Optionally, set up anomaly detection to alert on unusual spending patterns rather than fixed thresholds. You can also create more granular alerts for specific services or resources."
+          },
+          {
+            "question": "Can I create custom dashboards for executives?",
+            "answer": "Yes, custom dashboards are available in all product tiers. To create an executive dashboard: 1) Go to Dashboards > Create New, 2) Select from pre-built widgets or create custom ones, 3) Focus on high-level metrics like cost trends, resource efficiency, and security posture, 4) Use the 'Share' feature to provide view-only access to executives without giving full platform access. Pro and Enterprise tiers allow scheduled PDF exports to be emailed automatically."
+          },
+          {
+            "question": "How does the automation feature work?",
+            "answer": "Our automation feature allows you to create workflows that automatically respond to events or run on schedules. For example, you can automatically: 1) Shut down development environments outside business hours, 2) Resize over-provisioned resources based on utilization data, 3) Remediate security findings like exposed storage buckets, 4) Scale resources in response to monitoring alerts. Workflows can be created using our visual editor or YAML configuration, with support for conditional logic, approvals, and integration with external systems."
+          },
+          {
+            "question": "What kind of reports can I generate with your platform?",
+            "answer": "Our reporting capabilities include: 1) Cost reports with breakdowns by service, project, or custom tags, 2) Security compliance reports for standards like CIS, NIST, and PCI, 3) Resource utilization and efficiency reports, 4) Inventory and configuration reports, 5) Change tracking and audit reports. Reports can be customized, saved as templates, scheduled for regular generation, and exported in various formats (PDF, CSV, Excel). Enterprise customers can create completely custom reports using our reporting API."
+          }
+        ]
+      },
+      {
+        "name": "Account Management",
+        "questions": [
+          {
+            "question": "How do I add users to my account?",
+            "answer": "To add users: 1) Navigate to Admin > User Management > Add User, 2) Enter the user's email address and select their role, 3) Customize permissions if needed, 4) Click 'Send Invitation'. The new user will receive an email with instructions to create their password and access the platform. Basic and Pro plans have limits on the number of users, while Enterprise supports unlimited users with custom roles."
+          },
+          {
+            "question": "Can I set up different permissions for team members?",
+            "answer": "Yes, we offer role-based access control. In the Pro tier, you can assign users to predefined roles such as Admin, Operator, Auditor, and Viewer. In the Enterprise tier, you can create custom roles with granular permissions. Additionally, you can restrict access to specific cloud accounts, resource groups, or features. Multi-factor authentication can be enforced for sensitive roles."
+          },
+          {
+            "question": "How do I change my subscription from monthly to annual billing?",
+            "answer": "To change from monthly to annual billing: 1) Log in to the customer portal at portal.techsolutions.example.com, 2) Navigate to Account > Subscription > Manage, 3) Select 'Switch to Annual Billing', 4) Review the prorated amount and savings, 5) Confirm the change. The system will calculate a prorated credit for your remaining monthly term and apply it to your annual subscription. Your new annual billing cycle will begin immediately."
+          },
+          {
+            "question": "What happens to my data if I cancel my subscription?",
+            "answer": "If you cancel your subscription, your access to the platform will continue until the end of your current billing period. After that, your account will be deactivated. Your data will be retained for 30 days, during which time you can reactivate your account without data loss. After 30 days, your data will be scheduled for deletion. You can request a data export before cancellation by contacting customer support."
+          },
+          {
+            "question": "How do I upgrade my account to add more user licenses?",
+            "answer": "To add more user licenses: 1) Go to Account > Subscription > Manage in the customer portal, 2) Select 'Add User Licenses', 3) Choose the number of additional licenses needed, 4) Review the prorated cost for your current billing period, 5) Complete the purchase. The new licenses will be available immediately, and your subscription will be updated to include them in future billing cycles."
+          },
+          {
+            "question": "Can I have multiple subscription tiers in one organization?",
+            "answer": "Yes, with our Enterprise plan, you can set up a multi-tier organizational structure with different subscription levels for different departments or teams. This allows for centralized billing and management while providing appropriate capabilities to each team. Contact our sales team to set up a custom organizational structure with mixed subscription tiers and consolidated billing."
+          }
+        ]
+      }
+    ]
+  }
+  

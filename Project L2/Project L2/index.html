@@ -1,0 +1,568 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSolutions Support Agent</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #3b82f6;
+            --dark-bg: #1e293b;
+            --darker-bg: #0f172a;
+            --light-bg: #f1f5f9;
+            --text-light: #f8fafc;
+            --text-dark: #0f172a;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --user-msg: #dbeafe;
+            --agent-msg: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .app-container {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            grid-template-rows: auto 1fr auto;
+            height: 100vh;
+            gap: 1rem;
+            padding: 1rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        header {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-container i {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        #new-chat-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        #new-chat-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--warning);
+        }
+
+        .status-dot.connected {
+            background-color: var(--success);
+        }
+
+        .chat-container {
+            grid-row: 2 / 3;
+            grid-column: 1 / 2;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        #chat-history {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 1rem;
+            border-radius: 12px;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background-color: var(--user-msg);
+            border-bottom-right-radius: 4px;
+        }
+
+        .agent-message {
+            align-self: flex-start;
+            background-color: var(--agent-msg);
+            border-bottom-left-radius: 4px;
+        }
+
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            color: #64748b;
+        }
+
+        .input-container {
+            padding: 1rem;
+            background-color: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .agent-selector {
+            margin-bottom: 0.5rem;
+        }
+
+        .agent-selector label {
+            margin-right: 0.5rem;
+            font-weight: 500;
+        }
+
+        .agent-selector select {
+            padding: 0.3rem 0.5rem;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .input-wrapper {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        #send-btn {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+        }
+
+        #send-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .agent-info-panel {
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;
+            background-color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .agent-info-panel h3 {
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        #active-agent {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .agent-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .detail-item span:first-child {
+            font-weight: 500;
+            color: #64748b;
+        }
+
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #64748b;
+            font-style: italic;
+        }
+
+        /* Responsive design */
+        @media (max-width: 900px) {
+            .app-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .agent-info-panel {
+                grid-row: 3 / 4;
+                grid-column: 1 / 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo-container">
+                <i class="fas fa-robot"></i>
+                <h1>TechSolutions Support Agent</h1>
+            </div>
+            <div class="controls">
+                <button id="new-chat-btn"><i class="fas fa-plus"></i> New Chat</button>
+                <div class="status-indicator">
+                    <div class="status-dot"></div>
+                    <span id="status-text">Connecting...</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="chat-container">
+            <div id="chat-history">
+                <!-- Messages will be dynamically added here -->
+            </div>
+            
+            <div class="input-container">
+                <div class="agent-selector">
+                    <label for="agent-type">Agent Type:</label>
+                    <select id="agent-type">
+                        <option value="auto">Auto (Router)</option>
+                        <option value="product">Product Specialist</option>
+                        <option value="technical">Technical Support</option>
+                        <option value="billing">Billing/Orders</option>
+                        <option value="account">Account Management</option>
+                    </select>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="user-input" placeholder="Type your support query here...">
+                    <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="agent-info-panel">
+            <h3>Active Agent</h3>
+            <div id="active-agent">Router Agent</div>
+            <div class="agent-details">
+                <div class="detail-item">
+                    <span>Status:</span>
+                    <span id="agent-status">Available</span>
+                </div>
+                <div class="detail-item">
+                    <span>Processing:</span>
+                    <span id="agent-processing">No</span>
+                </div>
+                <div class="detail-item">
+                    <span>Knowledge:</span>
+                    <span id="agent-knowledge">Product Catalog, FAQs</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const chatHistory = document.getElementById('chat-history');
+            const userInput = document.getElementById('user-input');
+            const sendBtn = document.getElementById('send-btn');
+            const newChatBtn = document.getElementById('new-chat-btn');
+            const agentType = document.getElementById('agent-type');
+            const activeAgentDisplay = document.getElementById('active-agent');
+            const agentStatus = document.getElementById('agent-status');
+            const agentProcessing = document.getElementById('agent-processing');
+            const agentKnowledge = document.getElementById('agent-knowledge');
+            const statusText = document.getElementById('status-text');
+            const statusDot = document.querySelector('.status-dot');
+            
+            let conversationId = null;
+            let conversationHistory = [];
+            
+            // Initialize app
+            init();
+            
+            function init() {
+                updateStatus('connected');
+                addSystemMessage("Hello! I'm your TechSolutions support assistant. How can I help you today?");
+            }
+            
+            function updateStatus(status) {
+                statusDot.className = 'status-dot';
+                
+                switch(status) {
+                    case 'connecting':
+                        statusText.textContent = 'Connecting...';
+                        statusDot.classList.add('connecting');
+                        break;
+                    case 'connected':
+                        statusText.textContent = 'Connected';
+                        statusDot.classList.add('connected');
+                        break;
+                    case 'error':
+                        statusText.textContent = 'Connection Error';
+                        statusDot.classList.add('error');
+                        break;
+                }
+            }
+            
+            function addSystemMessage(text) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'message system-message';
+                messageDiv.innerHTML = `
+                    <div class="message-header">
+                        <span>System</span>
+                        <span>${new Date().toLocaleTimeString()}</span>
+                    </div>
+                    <div class="message-content">${text}</div>
+                `;
+                chatHistory.appendChild(messageDiv);
+                chatHistory.scrollTop = chatHistory.scrollHeight;
+            }
+            
+            function addMessage(text, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}-message`;
+                messageDiv.innerHTML = `
+                    <div class="message-header">
+                        <span>${sender === 'user' ? 'You' : 'Support Agent'}</span>
+                        <span>${new Date().toLocaleTimeString()}</span>
+                    </div>
+                    <div class="message-content">${text}</div>
+                `;
+                chatHistory.appendChild(messageDiv);
+                chatHistory.scrollTop = chatHistory.scrollHeight;
+            }
+            
+            function showTypingIndicator() {
+                const typingDiv = document.createElement('div');
+                typingDiv.id = 'typing-indicator';
+                typingDiv.className = 'typing-indicator';
+                typingDiv.innerHTML = `
+                    <span>Agent is typing</span>
+                    <div class="dots">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                `;
+                chatHistory.appendChild(typingDiv);
+                chatHistory.scrollTop = chatHistory.scrollHeight;
+            }
+            
+            function hideTypingIndicator() {
+                const typingIndicator = document.getElementById('typing-indicator');
+                if (typingIndicator) {
+                    typingIndicator.remove();
+                }
+            }
+            
+            function sendMessage() {
+                const message = userInput.value.trim();
+                if (!message) return;
+                
+                // Add user message to UI
+                addMessage(message, 'user');
+                userInput.value = '';
+                
+                // Show typing indicator
+                showTypingIndicator();
+                
+                try {
+                    // Update agent status
+                    agentProcessing.textContent = "Yes";
+                    
+                    // Prepare request
+                    const requestBody = {
+                        query: message,
+                        conversation_id: conversationId
+                    };
+                    
+                    // Determine if we're forcing a specific agent
+                    const forceAgent = agentType.value !== 'auto' ? agentType.value : null;
+                    
+                    // Send request to backend
+                    fetch('/api/query', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(requestBody)
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`API error: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Update conversation ID if it's a new conversation
+                        if (!conversationId) {
+                            conversationId = data.conversation_id;
+                        }
+                        
+                        // Add agent response to UI
+                        hideTypingIndicator();
+                        addMessage(data.response, 'agent');
+                        
+                        // Update agent info panel
+                        updateAgentInfo(data.agent);
+                        
+                        // Update agent status
+                        agentProcessing.textContent = "No";
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        hideTypingIndicator();
+                        addSystemMessage(`Error: ${error.message}`);
+                        updateStatus('error');
+                        agentProcessing.textContent = "No";
+                    });
+                    
+                } catch (error) {
+                    console.error('Error:', error);
+                    hideTypingIndicator();
+                    addSystemMessage(`Error: ${error.message}`);
+                    updateStatus('error');
+                    agentProcessing.textContent = "No";
+                }
+            }
+            
+            function updateAgentInfo(agentType) {
+                // Map agent types to display names
+                const agentNames = {
+                    'router': 'Router Agent',
+                    'product': 'Product Specialist',
+                    'technical': 'Technical Support',
+                    'billing': 'Billing/Orders Agent',
+                    'account': 'Account Management',
+                    'multiple': 'Multiple Agents',
+                    'general': 'General Support'
+                };
+                
+                // Update active agent display
+                const displayName = agentNames[agentType] || 'Support Agent';
+                activeAgentDisplay.textContent = displayName;
+                
+                // Update agent knowledge based on type
+                let knowledge = '';
+                switch(agentType) {
+                    case 'product':
+                        knowledge = 'Product Catalog, FAQs, Comparisons';
+                        break;
+                    case 'technical':
+                        knowledge = 'Technical Docs, Troubleshooting, Diagnostics';
+                        break;
+                    case 'billing':
+                        knowledge = 'Order System, Account Details, Pricing';
+                        break;
+                    case 'account':
+                        knowledge = 'User Management, Subscription Details';
+                        break;
+                    case 'router':
+                        knowledge = 'Query Classification, Routing';
+                        break;
+                    default:
+                        knowledge = 'General Support Knowledge';
+                }
+                agentKnowledge.textContent = knowledge;
+            }
+            
+            function startNewConversation() {
+                conversationId = null;
+                conversationHistory = [];
+                chatHistory.innerHTML = '';
+                updateAgentInfo('router');
+                addSystemMessage("Hello! I'm your TechSolutions support assistant. How can I help you today?");
+            }
+            
+            // Event listeners
+            sendBtn.addEventListener('click', sendMessage);
+            
+            userInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            newChatBtn.addEventListener('click', startNewConversation);
+            
+            agentType.addEventListener('change', () => {
+                const agentValue = agentType.value;
+                if (agentValue !== 'auto') {
+                    addSystemMessage(`Agent mode changed to: ${agentType.options[agentType.selectedIndex].text}`);
+                    updateAgentInfo(agentValue);
+                } else {
+                    updateAgentInfo('router');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
